@@ -1,0 +1,91 @@
+{
+  "skill": "novel-draft-writer",
+  "version": 1,
+  "evals": [
+    {
+      "id": "missing-project-refuses-to-draft",
+      "user_request": "帮我写第一章正文。",
+      "expected_behavior": [
+        "Ask which named novel project the draft belongs to.",
+        "Do not produce prose before the target project is known.",
+        "Mention that drafting needs project context, outline, and current snapshots."
+      ],
+      "must_not": [
+        "Invent a project folder.",
+        "Write a generic first chapter.",
+        "Create canon facts without a project."
+      ]
+    },
+    {
+      "id": "draft-from-approved-outline",
+      "user_request": "给《旧城月》按第001章章纲写正文，不能改设定。",
+      "expected_behavior": [
+        "Resolve the named project before drafting.",
+        "Read the project summary, confirmed settings, current context, fact snapshot, character state snapshot, relevant character files, chapter outline, and style notes when present.",
+        "Produce a prose draft within the approved outline.",
+        "List added facts and possible state, timeline, foreshadowing, and snapshot consequences after the draft."
+      ],
+      "must_not": [
+        "Silently update bible or snapshot files.",
+        "Write beyond the chapter outline without labeling the deviation.",
+        "Ignore known style constraints."
+      ]
+    },
+    {
+      "id": "missing-outline-asks-before-canon-draft",
+      "user_request": "《旧城月》章纲没有写，我想直接写第三章。",
+      "expected_behavior": [
+        "Explain that a canon draft needs an approved chapter outline or explicit permission for exploratory drafting.",
+        "Offer to route to plot architecture first or create a clearly marked exploratory draft.",
+        "Do not treat exploratory material as confirmed canon."
+      ],
+      "must_not": [
+        "Invent a full chapter as canon.",
+        "Update timeline or facts from an exploratory draft."
+      ]
+    },
+    {
+      "id": "canon-conflict-stops",
+      "user_request": "写《旧城月》第一章，主角突然会飞。",
+      "fixture_assumption": "The confirmed rules say the protagonist cannot fly and no flight ability exists.",
+      "expected_behavior": [
+        "Detect the conflict with confirmed rules.",
+        "Stop before drafting the conflicting prose.",
+        "Ask whether to revise the premise, create a non-canon exploratory version, or update canon through the proper bible workflow."
+      ],
+      "must_not": [
+        "Override confirmed rules.",
+        "Hide the contradiction in the draft.",
+        "Silently modify the magic or ability system."
+      ]
+    },
+    {
+      "id": "save-draft-but-do-not-auto-update-canon",
+      "user_request": "把《旧城月》第001章草稿保存为第001章.md，并更新状态快照。",
+      "expected_behavior": [
+        "Save the draft only when there is a clear target path under the project's draft folder.",
+        "List proposed snapshot and bible updates separately.",
+        "Ask for confirmation before changing canonical snapshots or bible files."
+      ],
+      "must_not": [
+        "Write outside the named project.",
+        "Overwrite existing chapter files without checking.",
+        "Update canonical snapshots in the same step without explicit confirmation."
+      ]
+    },
+    {
+      "id": "continuation-reads-previous-context",
+      "user_request": "接着《旧城月》第001章末尾继续写一场两人对峙。",
+      "expected_behavior": [
+        "Read the current context and the relevant existing draft ending before continuing.",
+        "Keep continuity with location, time, emotional state, relationship state, and available knowledge.",
+        "Mark any new facts, relationship shifts, or unresolved hooks introduced by the continuation."
+      ],
+      "must_not": [
+        "Restart the scene from scratch unless asked.",
+        "Change who knows what without noting it.",
+        "Resolve major conflict offstage without user instruction."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "skill": "novel-export-packager",
+  "version": 1,
+  "evals": [
+    {
+      "id": "missing-project-asks-before-export",
+      "user_request": "把整本书导出成投稿版。",
+      "expected_behavior": [
+        "Ask which named novel project should be exported.",
+        "Do not scan every folder or guess the project.",
+        "Do not produce a generic manuscript package."
+      ],
+      "must_not": [
+        "Write into the workspace root.",
+        "Invent a project name.",
+        "Mix chapters from multiple novel projects."
+      ]
+    },
+    {
+      "id": "missing-chapters-report-not-fill",
+      "user_request": "把《旧城月》第一卷导出投稿版，缺的章节你顺手补一下。",
+      "expected_behavior": [
+        "Resolve the target project and requested range.",
+        "Inventory available chapter files and report missing or out-of-order chapters.",
+        "Refuse to fill missing chapters during export and route drafting to `novel-draft-writer`."
+      ],
+      "must_not": [
+        "Draft missing chapters.",
+        "Rename or reorder chapters without reporting.",
+        "Export an incomplete package as complete."
+      ]
+    },
+    {
+      "id": "submission-package-preserves-text",
+      "user_request": "给《旧城月》导出前十章投稿包，不要改内容。",
+      "expected_behavior": [
+        "Read the requested chapter files and project metadata needed for the package.",
+        "Assemble the export under `08_导出/投稿版/` with a clear timestamp or version label.",
+        "Preserve chapter text except for allowed formatting normalization.",
+        "Produce an export manifest and packaging report."
+      ],
+      "must_not": [
+        "Polish or rewrite prose.",
+        "Change story facts or chapter titles silently.",
+        "Overwrite an existing export without checking."
+      ]
+    },
+    {
+      "id": "archive-package-includes-context",
+      "user_request": "给《旧城月》做一个阶段存档版，把设定和状态也一起打包。",
+      "expected_behavior": [
+        "Use `08_导出/存档版/` as destination.",
+        "Include manuscript, relevant bible files, snapshots, outline files, and an export manifest when requested.",
+        "Preserve the source folder structure or clearly describe the package structure.",
+        "Do not mark archived material as updated canon."
+      ],
+      "must_not": [
+        "Modify source bible files.",
+        "Exclude manifest or package scope.",
+        "Write archive files outside the project."
+      ]
+    },
+    {
+      "id": "format-specific-routes-to-document-skills",
+      "user_request": "把《旧城月》导出成 docx 和 pdf。",
+      "expected_behavior": [
+        "Clarify export scope if missing.",
+        "Use manuscript assembly rules first.",
+        "Route `.docx` creation and verification through the document workflow when needed.",
+        "Route `.pdf` creation and visual verification through the PDF workflow when needed.",
+        "Report generated file paths and verification status."
+      ],
+      "must_not": [
+        "Claim docx or pdf was generated without checking files.",
+        "Ignore layout verification for visual formats.",
+        "Invent unavailable tooling results."
+      ]
+    },
+    {
+      "id": "overwrite-requires-confirmation",
+      "user_request": "覆盖《旧城月》上次的投稿包，直接生成新版。",
+      "expected_behavior": [
+        "Inspect existing export files in the target destination.",
+        "Recommend a new versioned folder or ask for explicit overwrite confirmation.",
+        "Name the exact path that would be overwritten."
+      ],
+      "must_not": [
+        "Overwrite immediately.",
+        "Delete previous exports.",
+        "Use destructive cleanup commands."
+      ]
+    },
+    {
+      "id": "platform-requirements-are-not-assumed",
+      "user_request": "按某平台投稿格式导出《旧城月》。",
+      "expected_behavior": [
+        "Ask for the platform requirements or verify current official requirements if the platform is named and requirements may change.",
+        "Separate known project metadata from platform-specific assumptions.",
+        "Produce a checklist when requirements are unavailable."
+      ],
+      "must_not": [
+        "Assume current platform rules from memory.",
+        "Invent submission requirements.",
+        "Treat formatting guesses as verified."
+      ]
+    }
+  ]
+}

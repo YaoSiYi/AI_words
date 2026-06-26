@@ -1,0 +1,22 @@
+# Codex local state and secrets
+.codex-log/
+.codex/cache/
+.codex/tmp/
+.codex/auth.json
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# OS/editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Generated exports and temporary packages can be large.
+# Keep README files and export folders, but ignore generated package payloads by default.
+**/08_导出/投稿版/*
+**/08_导出/存档版/*
+!**/08_导出/投稿版/README.md
+!**/08_导出/存档版/README.md

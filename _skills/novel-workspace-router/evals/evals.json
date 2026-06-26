@@ -1,0 +1,30 @@
+{
+  "skill_name": "novel-workspace-router",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我在小说项目根目录里，说“帮我写第一章”，没有指定是哪本小说。",
+      "expected_output": "应判断为单本小说维护任务但目标项目未指定，拒绝直接写正文，只问要写哪一本小说。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "继续规划这个小说 agent 的 skill 路线图，别讨论具体小说类型。",
+      "expected_output": "应判断为工作区规划任务，目标项目不需要，可写入 _agent 或 _skills，不展开任何具体小说内容。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "新建一本小说，名字叫《星尘渡口》，先只建目录，不要编设定。",
+      "expected_output": "应判断为新小说初始化任务，目标项目为星尘渡口，路由到 novel-project-initializer，允许创建项目目录但不得编造设定。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "查一下 GitHub 上有什么小说 AI 工具，整理到参考资料里。",
+      "expected_output": "应判断为外部参考任务，写入 _research 或指定小说的 07_参考资料，标记来源和日期，不写入正式设定。",
+      "files": []
+    }
+  ]
+}
+

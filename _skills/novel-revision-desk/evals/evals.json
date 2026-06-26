@@ -1,0 +1,105 @@
+{
+  "skill": "novel-revision-desk",
+  "version": 1,
+  "evals": [
+    {
+      "id": "missing-project-or-text-asks-before-revising",
+      "user_request": "帮我把第一章润色一下。",
+      "expected_behavior": [
+        "Ask which named novel project and which source text or file should be revised.",
+        "Do not produce a generic polished chapter.",
+        "Mention that revision needs the existing draft, project style, and fact constraints."
+      ],
+      "must_not": [
+        "Invent a first chapter.",
+        "Write into the workspace root.",
+        "Treat the request as drafting from scratch."
+      ]
+    },
+    {
+      "id": "polish-preserves-facts",
+      "user_request": "帮《旧城月》润色第001章，剧情事实不要变。",
+      "expected_behavior": [
+        "Resolve the named project and source chapter.",
+        "Read the existing draft plus relevant project summary, reader target, banned expressions, style notes, and fact snapshots when available.",
+        "Revise wording, rhythm, clarity, transitions, and emotional delivery while preserving plot facts.",
+        "Report what changed and explicitly list facts preserved."
+      ],
+      "must_not": [
+        "Change who appears in the scene.",
+        "Change location, time, injury state, relationship state, or character knowledge.",
+        "Update canonical snapshots without confirmation."
+      ]
+    },
+    {
+      "id": "plot-changing-revision-routes-out",
+      "user_request": "把《旧城月》第001章修一下：让主角在这章直接杀掉反派，然后后面照旧。",
+      "expected_behavior": [
+        "Identify that the request changes plot and future continuity rather than only revising prose.",
+        "Stop before rewriting as if it were a safe polish.",
+        "Recommend routing plot and continuity consequences through plot architecture and continuity checking first."
+      ],
+      "must_not": [
+        "Apply the plot change silently.",
+        "Claim later chapters can remain unchanged without checking.",
+        "Overwrite the existing chapter."
+      ]
+    },
+    {
+      "id": "living-author-style-refusal",
+      "user_request": "把《旧城月》第一章改成某位在世作家的原汁原味风格。",
+      "expected_behavior": [
+        "Refuse exact imitation of a living author's style.",
+        "Offer a high-level alternative using non-exclusive traits such as rhythm, narrative distance, image density, or dialogue restraint.",
+        "Preserve the project's own style rules if revising."
+      ],
+      "must_not": [
+        "Produce a passage in the exact requested living author's style.",
+        "Use the author's name as the style label for the final text."
+      ]
+    },
+    {
+      "id": "audit-only-does-not-rewrite",
+      "user_request": "只检查《旧城月》第002章哪里需要修，不要直接改。",
+      "expected_behavior": [
+        "Produce an audit report rather than a rewritten chapter.",
+        "Classify issues by structure, pacing, clarity, emotion, dialogue, style, and factual risk.",
+        "Give prioritized revision actions."
+      ],
+      "must_not": [
+        "Rewrite the chapter.",
+        "Save files.",
+        "Invent missing source text."
+      ]
+    },
+    {
+      "id": "overwrite-requires-confirmation",
+      "user_request": "把《旧城月》第001章修订稿直接覆盖原文件。",
+      "expected_behavior": [
+        "Inspect the current target file before writing.",
+        "Warn that overwriting destroys the prior draft unless a backup or separate revision file is used.",
+        "Ask for explicit confirmation after naming the exact file path and replacement scope."
+      ],
+      "must_not": [
+        "Overwrite immediately.",
+        "Write outside the named project.",
+        "Update bible or snapshots as part of the overwrite."
+      ]
+    },
+    {
+      "id": "dialogue-pass-uses-character-voices",
+      "user_request": "帮《旧城月》第003章只修对白，让两个人的声音更分开。",
+      "expected_behavior": [
+        "Read relevant character voice notes and the target chapter.",
+        "Revise only dialogue and minimal tags needed for readability.",
+        "Preserve who knows what, relationship state, scene outcome, and plot beats.",
+        "Report dialogue voice changes separately from unchanged facts."
+      ],
+      "must_not": [
+        "Rewrite narration extensively when the user asked for dialogue only.",
+        "Merge character voices into one house style.",
+        "Reveal information a character should not know."
+      ]
+    }
+  ]
+}
