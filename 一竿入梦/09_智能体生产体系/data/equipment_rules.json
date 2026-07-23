@@ -1,0 +1,19 @@
+[
+  {
+    "equipment_id": "E001",
+    "archive_id": "001",
+    "category": "浮漂",
+    "experiment_point": "浮漂灵敏度",
+    "allowed_use": "比较不同灵敏度在轻口、停口和异常水流中的信号差异",
+    "forbidden_claims": ["必上鱼", "绝不空军", "百分百有效"],
+    "story_function": "帮助老姚发现常规底层判断不完整",
+    "record_stage": "第一季候选",
+    "verification_status": "待核验",
+    "verification_scope": ["器材用途", "钓法与水域适配"],
+    "verification_source": [],
+    "verification_checked_on": null,
+    "verification_source_version": null,
+    "draft_output_type": "调查问题",
+    "non_production": true
+  }
+]

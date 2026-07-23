@@ -1,0 +1,17 @@
+[
+  {
+    "archive_id": "001",
+    "water_area": "无声湖",
+    "real_problem": "连续空军，有鱼星但无有效咬口",
+    "abnormal_event": "整片水域短暂失去水声",
+    "evidence": ["一竿一漂下的异常静止", "鱼线横向移动", "水下摄像机边缘阴影", "异常鳞片"],
+    "record_stage": "第一季候选",
+    "verification_status": "待核验",
+    "verification_scope": ["水域属性", "垂钓规则", "季节与水文条件"],
+    "verification_source": [],
+    "verification_checked_on": null,
+    "verification_source_version": null,
+    "draft_output_type": "调查问题",
+    "non_production": true
+  }
+]

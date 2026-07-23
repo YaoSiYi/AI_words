@@ -1,0 +1,19 @@
+[
+  {
+    "knowledge_id": "K001",
+    "archive_id": "001",
+    "topic": "有鱼星没口时先判断鱼层",
+    "wrong_judgment": "只认为饵料或调漂出问题",
+    "correct_adjustment": "结合鱼星位置、漂相、水温、溶氧和小鱼活动重新判断鱼层",
+    "verification": "调整到中上层试探后鱼线出现横向拖动",
+    "risk_note": "不能写成绝对结论，具体水域需现场判断",
+    "record_stage": "第一季候选",
+    "verification_status": "待核验",
+    "verification_scope": ["钓鱼专业事实", "具体水域条件"],
+    "verification_source": [],
+    "verification_checked_on": null,
+    "verification_source_version": null,
+    "draft_output_type": "证据需求",
+    "non_production": true
+  }
+]

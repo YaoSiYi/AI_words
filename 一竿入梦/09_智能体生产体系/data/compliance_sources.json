@@ -1,0 +1,64 @@
+[
+  {
+    "source_id": "CN_FISHERIES_LAW_2025",
+    "title": "中华人民共和国渔业法",
+    "publisher": "全国人民代表大会",
+    "url": "https://www.npc.gov.cn/npc/c2/c30834/202512/t20251227_450727.html",
+    "verification_status": "已核验",
+    "verification_scope": ["禁渔区和禁渔期", "电鱼毒鱼炸鱼", "禁用渔具", "误捕禁捕苗种和怀卵亲本"],
+    "verification_source": ["https://www.npc.gov.cn/npc/c2/c30834/202512/t20251227_450727.html"],
+    "verification_checked_on": "2026-07-15",
+    "verification_source_version": "2025",
+    "non_production": false
+  },
+  {
+    "source_id": "AQUATIC_WILDLIFE_REGULATION",
+    "title": "中华人民共和国水生野生动物保护实施条例",
+    "publisher": "国家行政法规库",
+    "url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1076",
+    "verification_status": "已核验",
+    "verification_scope": ["误捕放生", "受伤搁浅被困个体报告救护", "重点保护水生野生动物"],
+    "verification_source": ["https://xzfg.moj.gov.cn/front/law/detail?LawID=1076"],
+    "verification_checked_on": "2026-07-15",
+    "verification_source_version": "现行条例",
+    "non_production": false
+  },
+  {
+    "source_id": "YANGTZE_ANGLING_2024",
+    "title": "关于进一步加强长江流域禁捕水域垂钓管理工作的意见",
+    "publisher": "农业农村部办公厅",
+    "url": "https://cjyzbgs.moa.gov.cn/tzgg/202412/t20241231_6468771.htm",
+    "verification_status": "已核验",
+    "verification_scope": ["重点保护物种误钓", "明显损伤报告", "外来物种不得放归天然水体", "地方垂钓规则"],
+    "verification_source": ["https://cjyzbgs.moa.gov.cn/tzgg/202412/t20241231_6468771.htm"],
+    "verification_checked_on": "2026-07-15",
+    "verification_source_version": "2024",
+    "non_production": false
+  },
+  {
+    "source_id": "NOAA_GHOST_FISHING",
+    "title": "What is ghost fishing?",
+    "publisher": "NOAA Ocean Service",
+    "url": "https://oceanservice.noaa.gov/facts/ghostfishing.html",
+    "verification_status": "已核验",
+    "verification_scope": ["遗失或废弃渔具持续缠绕风险", "一般生态背景"],
+    "verification_source": ["https://oceanservice.noaa.gov/facts/ghostfishing.html"],
+    "verification_checked_on": "2026-07-17",
+    "verification_source_version": "网页现行版",
+    "scope_limit": "以海洋案例为主，不能替代具体淡水水域法规与物种处置规则",
+    "non_production": false
+  },
+  {
+    "source_id": "FAO_ALDFG_2009",
+    "title": "Abandoned, lost or otherwise discarded fishing gear",
+    "publisher": "FAO / UNEP",
+    "url": "https://www.fao.org/4/i0620e/i0620e00.htm",
+    "verification_status": "已核验",
+    "verification_scope": ["废弃遗失渔具持续捕捞", "缠绕与栖息地影响"],
+    "verification_source": ["https://www.fao.org/4/i0620e/i0620e00.htm"],
+    "verification_checked_on": "2026-07-17",
+    "verification_source_version": "FAO Fisheries and Aquaculture Technical Paper 523",
+    "scope_limit": "支持一般生态风险，不证明档案001具体风线受力模型",
+    "non_production": false
+  }
+]

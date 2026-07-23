@@ -36,6 +36,27 @@ Agent 在根目录不得做以下行为：
 
 Agent 收到用户请求后，应先判断任务类型。
 
+### 3.0 Agent / Skill 自动调用规则
+
+每次执行任务前，Agent 必须自动检索并调取对应的 agent / skill，不需要用户额外强调。
+
+执行顺序：
+
+1. 先用 `novel-workspace-router` 判断任务层级、目标项目和写入边界。
+2. 再按任务类型调用对应专项 skill：
+   - 新建小说：`novel-project-initializer`
+   - 设定、角色、术语、资料库：`novel-bible-manager`
+   - 大纲、章纲、伏笔、时间线：`novel-plot-architect`
+   - 正文草稿、场景、对白：`novel-draft-writer`
+   - 文风、去 AI 味、角色声音：`novel-style-keeper`
+   - 审稿、润色、改稿、节奏修订：`novel-revision-desk`
+   - 连续性、设定冲突、状态漂移：`novel-continuity-checker`
+   - 外部资料、考据、参考整理：`novel-research-scout`
+   - 导出、打包、投稿版：`novel-export-packager`
+3. 如果任务同时涉及多个方向，先调用会影响边界和事实的 skill，再调用写作或修订 skill。例如：先设定管理，再写正文；先连续性检查，再修订。
+4. 如果本地项目内已有对应规范文件，必须先读取，例如 `05_修订与审校/风格修订.md`、`06_状态快照/已确认设定.md`、`03_剧情结构/章纲/`。
+5. 如发现没有合适 skill，应说明缺口，并按现有工作区规则采用最接近的流程，不得跳过任务分流。
+
 ### 3.1 工作区规划任务
 
 符合以下情况时，归为工作区规划任务：
@@ -364,4 +385,3 @@ Agent 与用户沟通时应遵守：
 - 具体世界观设计。
 - 大纲创作。
 - 市场定位建议。
-
