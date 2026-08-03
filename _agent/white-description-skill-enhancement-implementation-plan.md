@@ -24,6 +24,7 @@ Original notes under `文案文风/` remain unchanged. Existing user modificatio
 - `_skills/novel-prose-craft-keeper/references/prose-craft-rubric.md` — add explicit white-description and over-application checks.
 - `_skills/novel-prose-craft-keeper/evals/evals.json` — add application and counterexample cases.
 - `_skills/novel-prose-craft-keeper/references/test-notes.md` — record baseline failures, post-change results, and review criteria.
+- `scripts/verify-novel-skills.sh` — include `novel-prose-craft-keeper` in local and installed-skill verification.
 
 **Create:**
 
@@ -271,6 +272,8 @@ Add five JSON evals covering:
 3. explanatory summary to action chain;
 4. dense prose to natural breathing without information loss;
 5. rejection of the request to delete all camera-invisible material.
+
+Add a sixth counterexample covering the valid use of close-up single-character white description for a short emotional beat, so spatial anchoring is not over-applied.
 
 Each expected output must name both desired behavior and forbidden overcorrection. Keep valid JSON and do not renumber existing IDs.
 
