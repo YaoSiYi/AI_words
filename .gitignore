@@ -3,6 +3,7 @@
 .codex/cache/
 .codex/tmp/
 .codex/auth.json
+.worktrees/
 
 # Environment and secret files
 .env
