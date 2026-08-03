@@ -14,7 +14,10 @@ fi
 
 mkdir -p "$TARGET_DIR"
 
-mapfile -t skills < <(find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -type d -name 'novel-*' | sort)
+skills=()
+while IFS= read -r skill_path; do
+  skills+=("$skill_path")
+done < <(find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -type d -name 'novel-*' ! -name '*-workspace' | sort)
 
 if [[ "${#skills[@]}" -eq 0 ]]; then
   echo "No novel skills found under: $SOURCE_DIR" >&2
