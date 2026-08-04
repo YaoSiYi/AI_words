@@ -14,7 +14,10 @@ fi
 
 mkdir -p "$TARGET_DIR"
 
-mapfile -t skills < <(find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -type d -name 'novel-*' | sort)
+skills=()
+while IFS= read -r skill_path; do
+  skills+=("$skill_path")
+done < <(find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -type d \( -name 'novel-*' -o -name 'writing-association-trainer' \) | sort)
 
 if [[ "${#skills[@]}" -eq 0 ]]; then
   echo "No novel skills found under: $SOURCE_DIR" >&2
@@ -24,6 +27,7 @@ fi
 echo "Source: $SOURCE_DIR"
 echo "Target: $TARGET_DIR"
 
+installed_count=0
 for skill_path in "${skills[@]}"; do
   skill_name="$(basename "$skill_path")"
 
@@ -41,11 +45,12 @@ for skill_path in "${skills[@]}"; do
 
   mkdir -p "$TARGET_DIR/$skill_name"
   cp -R "$skill_path/." "$TARGET_DIR/$skill_name/"
+  installed_count=$((installed_count + 1))
   echo "Installed $skill_name"
 done
 
 echo
-echo "Installed ${#skills[@]} novel skills."
+echo "Installed $installed_count novel skills."
 if [[ -d "$BACKUP_DIR" ]]; then
   echo "Backups: $BACKUP_DIR"
 fi

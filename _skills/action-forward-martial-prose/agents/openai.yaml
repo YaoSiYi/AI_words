@@ -1,0 +1,4 @@
+interface:
+  display_name: "动作先行武侠文笔"
+  short_description: "为原创武侠玄幻正文提供清晰、可视、因果完整的动作表达"
+  default_prompt: "Use $action-forward-martial-prose to write an original martial-fantasy scene with clear action causality and visual power evidence."

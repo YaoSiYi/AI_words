@@ -16,6 +16,7 @@ expected=(
   novel-revision-desk
   novel-research-scout
   novel-export-packager
+  writing-association-trainer
 )
 
 errors=0
