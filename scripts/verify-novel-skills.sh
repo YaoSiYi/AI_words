@@ -16,6 +16,7 @@ expected=(
   novel-revision-desk
   novel-research-scout
   novel-export-packager
+  novel-prose-craft-keeper
 )
 
 errors=0
